@@ -1,7 +1,7 @@
 {
     "name": "AtlyssExecuteHPIndicator",
     "author": "BLKNeko",
-    "version_number": "1.0.0",
+    "version_number": "1.0.1",
     "website_url": "https://github.com/BLKNeko/AtlyssExecuteHPIndicator",
     "description": "No more guessing games! The enemy health bar turns yellow when they’re in Execute range. Because warriors deserve happiness too.",
     "dependencies": [
