@@ -79,7 +79,8 @@ Atlyss Execute HP Indicator shows you when an enemy’s HP drops below 25%, maki
 ---
 
 ## Known Issues
-- None for now… let’s hope it stays that way!
+- Constant UI checks can slightly impact performance.
+- ~~None for now… let’s hope it stays that way!~~
 
 ---
 

@@ -12,6 +12,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>lib\Assembly-CSharp.dll</HintPath>
+    </Reference>
     <Reference Include="BepInEx">
       <HintPath>$(AtlyssDir)\BepInEx\core\BepInEx.dll</HintPath>
     </Reference>
@@ -49,10 +52,6 @@
 
     <Reference Include="UnityEngine.UI">
       <HintPath>$(AtlyssDir)\Atlyss_Data\Managed\UnityEngine.UI.dll</HintPath>
-    </Reference>
-
-    <Reference Include="Assembly-CSharp">
-      <HintPath>$(AtlyssDir)\Atlyss_Data\Managed\Assembly-CSharp.dll</HintPath>
     </Reference>
   </ItemGroup>
 
