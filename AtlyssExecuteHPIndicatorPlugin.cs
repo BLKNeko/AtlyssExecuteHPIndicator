@@ -1,4 +1,6 @@
+using AtlyssExecuteHPIndicator.Config;
 using AtlyssExecuteHPIndicator.Model;
+using AtlyssExecuteHPIndicator.Utils;
 using BepInEx;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,6 +18,11 @@ namespace AtlyssExecuteHPIndicatorMod
         //private readonly List<Image> trackedBars = new List<Image>();
         private int scanCounter;
         static readonly Dictionary<Image, TrackedCreep> tracked = new();
+
+        void Awake()
+        {
+            AtlyssExecuteHPIndicatorConfig.Init(Config);
+        }
 
 
         private void FixedUpdate()
@@ -62,6 +69,12 @@ namespace AtlyssExecuteHPIndicatorMod
 
         void UpdateBars()
         {
+            var normalLow = ColorUtils.Parse(AtlyssExecuteHPIndicatorConfig.NormalLowHPColor.Value);
+            var normalHigh = ColorUtils.Parse(AtlyssExecuteHPIndicatorConfig.NormalHighHPColor.Value);
+            var elite = ColorUtils.Parse(AtlyssExecuteHPIndicatorConfig.EliteColor.Value);
+            var bgNormal = ColorUtils.Parse(AtlyssExecuteHPIndicatorConfig.BackgroundNormalColor.Value);
+            var bgElite = ColorUtils.Parse(AtlyssExecuteHPIndicatorConfig.BackgroundEliteColor.Value);
+
             foreach (var kv in tracked)
             {
                 var creep = kv.Value;
@@ -76,16 +89,16 @@ namespace AtlyssExecuteHPIndicatorMod
 
                 if (!isElite)
                 {
-                    creep.Foreground.color = percent <= 0.299f
-                        ? Color.yellow
-                        : Color.green;
+                    creep.Foreground.color = percent <= AtlyssExecuteHPIndicatorConfig.ExecuteHPPercent.Value
+                        ? normalLow
+                        : normalHigh;
 
-                    creep.Background.color = new Color(0f, 0f, 0f, 0.6f); // fundo escuro
+                    creep.Background.color = bgNormal; // fundo escuro
                 }
                 else
                 {
-                    creep.Foreground.color = Color.cyan;
-                    creep.Background.color = new Color(0f, 0.4f, 0.4f, 0.8f); // fundo elite
+                    creep.Foreground.color = elite;
+                    creep.Background.color = bgElite; // fundo elite
                 }
             }
         }
