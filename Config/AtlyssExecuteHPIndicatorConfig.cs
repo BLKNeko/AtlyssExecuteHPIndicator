@@ -16,29 +16,29 @@ namespace AtlyssExecuteHPIndicator.Config
         {
             ExecuteHPPercent = config.Bind(
                 "HP Percent",
-                "Execute HP Percent",
+                "Execute HP threshold (0.0 – 1.0)",
                 0.299f,
-                "HP % needed to Execute"
+                "Enemies can be executed when their HP is at or below this percentage"
             );
 
             NormalLowHPColor = config.Bind(
                 "Colors",
                 "NormalLowHP",
-                "#FFFF00",
+                "#e3852d",
                 "Color of normal enemies when HP is low"
             );
 
             NormalHighHPColor = config.Bind(
                 "Colors",
                 "NormalHighHP",
-                "#00FF00",
+                "#5de882",
                 "Color of normal enemies when HP is high"
             );
 
             EliteColor = config.Bind(
                 "Colors",
                 "Elite",
-                "#00FFFF",
+                "#5704d4",
                 "Color of elite enemies"
             );
 
@@ -52,7 +52,7 @@ namespace AtlyssExecuteHPIndicator.Config
             BackgroundEliteColor = config.Bind(
                 "Colors",
                 "BackgroundElite",
-                "#004466CC",
+                "#090017",
                 "Background color for elite enemies"
             );
         }

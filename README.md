@@ -30,6 +30,53 @@ Atlyss Execute HP Indicator shows you when an enemy’s HP drops below 25%, maki
 
 ---
 
+## Customization
+
+### **Configuration files are generated after launching the game with the mod installed at least once.**
+
+- Color codes are known as **HEX colors**.  
+  You can search for something like **"HEX Color Picker"** to find your desired color code.
+
+---
+
+### **Using R2ModMan**
+
+- Go to the **Config Editor** tab on the left panel.
+- Locate the path:  
+  **BepInEx\config\com.BLKNeko.AtlyssExecuteHPIndicator.cfg**
+- Click the file and then select **Edit Config**.
+
+<img src="https://i.imgur.com/M9Zvo6q.png"
+     style="max-width: 6000px; width: 100%; border: 2px solid #444;
+            border-radius: 10px; box-shadow: 0 0 12px #0004;" />
+
+- The configurable fields should pop up.  
+  You can now edit the values however you like.
+
+<img src="https://i.imgur.com/Qn0yFHH.png"
+     style="max-width: 6000px; width: 100%; border: 2px solid #444;
+            border-radius: 10px; box-shadow: 0 0 12px #0004;" />
+
+- **Save and enjoy!**
+
+---
+
+### **Editing Directly from the Folder**
+
+- Go to your **modded Atlyss folder**.
+- Navigate to:  
+  **…\Your_Atlyss_Modded_Folder\BepInEx\config**
+- Find the file **com.BLKNeko.AtlyssExecuteHPIndicator.cfg** and open it with your preferred text editor.
+- You can now edit the values as you like.
+
+<img src="https://i.imgur.com/x5os8w8.png"
+     style="max-width: 6000px; width: 100%; border: 2px solid #444;
+            border-radius: 10px; box-shadow: 0 0 12px #0004;" />
+
+- **Save and enjoy!**
+
+---
+
 ## Features
 - Visual indicator for enemy Execute range
 - Health bar turns yellow below 25% HP
@@ -53,7 +100,7 @@ Atlyss Execute HP Indicator shows you when an enemy’s HP drops below 25%, maki
                   border: 2px solid #444; border-radius: 10px; box-shadow: 0 0 12px #0004;" />
     </td>
     <td align="center">
-      <img src="https://i.imgur.com/5aaxAr3.png"
+      <img src="https://i.imgur.com/PhXgfP5.png"
            style="width: 350px; height: 200px; object-fit: cover;
                   border: 2px solid #444; border-radius: 10px; box-shadow: 0 0 12px #0004;" />
     </td>
@@ -61,7 +108,7 @@ Atlyss Execute HP Indicator shows you when an enemy’s HP drops below 25%, maki
 
   <tr>
     <td align="center">
-      <img src="https://i.imgur.com/NkH4pVp.png"
+      <img src="https://i.imgur.com/BkvHqKe.png"
            style="width: 350px; height: 200px; object-fit: cover;
                   border: 2px solid #444; border-radius: 10px; box-shadow: 0 0 12px #0004;" />
     </td>
@@ -85,6 +132,7 @@ Atlyss Execute HP Indicator shows you when an enemy’s HP drops below 25%, maki
 ---
 
 ## Changelog
+- **v1.1.0** – Added customizable health colors for high/low HP, background, and elite enemies.
 - **v1.0.1** – Optimized health bar detection to prevent FPS drops.
 - **v1.0.0** – Initial release
 
