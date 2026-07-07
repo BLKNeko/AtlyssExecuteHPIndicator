@@ -13,7 +13,7 @@ namespace AtlyssExecuteHPIndicatorMod
     {
         public const string MODUID = "com.BLKNeko.AtlyssExecuteHPIndicator";
         public const string MODNAME = "com.BLKNeko.Atlyss Execute HP Indicator";
-        public const string MODVERSION = "1.1.0";
+        public const string MODVERSION = "1.2.0";
 
         //private readonly List<Image> trackedBars = new List<Image>();
         private int scanCounter;
@@ -71,9 +71,11 @@ namespace AtlyssExecuteHPIndicatorMod
         {
             var normalLow = ColorUtils.Parse(AtlyssExecuteHPIndicatorConfig.NormalLowHPColor.Value);
             var normalHigh = ColorUtils.Parse(AtlyssExecuteHPIndicatorConfig.NormalHighHPColor.Value);
-            var elite = ColorUtils.Parse(AtlyssExecuteHPIndicatorConfig.EliteColor.Value);
             var bgNormal = ColorUtils.Parse(AtlyssExecuteHPIndicatorConfig.BackgroundNormalColor.Value);
+            var elite = ColorUtils.Parse(AtlyssExecuteHPIndicatorConfig.EliteColor.Value);
             var bgElite = ColorUtils.Parse(AtlyssExecuteHPIndicatorConfig.BackgroundEliteColor.Value);
+            var boss = ColorUtils.Parse(AtlyssExecuteHPIndicatorConfig.BossColor.Value);
+            var bgBoss = ColorUtils.Parse(AtlyssExecuteHPIndicatorConfig.BackgroundBossColor.Value);
 
             foreach (var kv in tracked)
             {
@@ -84,10 +86,12 @@ namespace AtlyssExecuteHPIndicatorMod
                     creep.Background == null)
                     continue;
 
-                bool isElite = creep.Behavior._scriptCreep._isElite;
+                bool isElite = creep.Behavior._scriptCreep._creepType == CreepType.ELITE;
+                bool isBoss = creep.Behavior._scriptCreep._creepType == CreepType.BOSS;
+
                 float percent = creep.Foreground.fillAmount;
 
-                if (!isElite)
+                if (!isElite && !isBoss)
                 {
                     creep.Foreground.color = percent <= AtlyssExecuteHPIndicatorConfig.ExecuteHPPercent.Value
                         ? normalLow
@@ -95,10 +99,15 @@ namespace AtlyssExecuteHPIndicatorMod
 
                     creep.Background.color = bgNormal; // fundo escuro
                 }
-                else
+                else if (isElite && !isBoss)
                 {
                     creep.Foreground.color = elite;
                     creep.Background.color = bgElite; // fundo elite
+                }
+                else
+                {
+                    creep.Foreground.color = boss;
+                    creep.Background.color = bgBoss; // fundo BOSS
                 }
             }
         }

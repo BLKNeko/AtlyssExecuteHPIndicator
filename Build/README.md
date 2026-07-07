@@ -132,6 +132,7 @@ Atlyss Execute HP Indicator shows you when an enemy’s HP drops below 25%, maki
 ---
 
 ## Changelog
+- **v1.2.0** – Fixed for the update, Now BOSS and ELITE enemies can have different custom colors.
 - **v1.1.0** – Added customizable health colors for high/low HP, background, and elite enemies.
 - **v1.0.1** – Optimized health bar detection to prevent FPS drops.
 - **v1.0.0** – Initial release

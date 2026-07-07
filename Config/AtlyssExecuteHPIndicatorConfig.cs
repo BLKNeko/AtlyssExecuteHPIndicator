@@ -8,9 +8,11 @@ namespace AtlyssExecuteHPIndicator.Config
 
         internal static ConfigEntry<string> NormalLowHPColor;
         internal static ConfigEntry<string> NormalHighHPColor;
-        internal static ConfigEntry<string> EliteColor;
         internal static ConfigEntry<string> BackgroundNormalColor;
+        internal static ConfigEntry<string> EliteColor;
         internal static ConfigEntry<string> BackgroundEliteColor;
+        internal static ConfigEntry<string> BossColor;
+        internal static ConfigEntry<string> BackgroundBossColor;
 
         internal static void Init(ConfigFile config)
         {
@@ -35,13 +37,6 @@ namespace AtlyssExecuteHPIndicator.Config
                 "Color of normal enemies when HP is high"
             );
 
-            EliteColor = config.Bind(
-                "Colors",
-                "Elite",
-                "#5704d4",
-                "Color of elite enemies"
-            );
-
             BackgroundNormalColor = config.Bind(
                 "Colors",
                 "BackgroundNormal",
@@ -49,11 +44,32 @@ namespace AtlyssExecuteHPIndicator.Config
                 "Background color for normal enemies"
             );
 
+            EliteColor = config.Bind(
+                "Colors",
+                "Elite",
+                "#5704d4",
+                "Color of elite enemies"
+            );
+
             BackgroundEliteColor = config.Bind(
                 "Colors",
                 "BackgroundElite",
                 "#090017",
                 "Background color for elite enemies"
+            );
+
+            BossColor = config.Bind(
+                "Colors",
+                "Boss",
+                "#c92812",
+                "Color of Boss enemies"
+            );
+
+            BackgroundBossColor = config.Bind(
+                "Colors",
+                "BackgroundBoss",
+                "#420000",
+                "Background color for Boss enemies"
             );
         }
     }
